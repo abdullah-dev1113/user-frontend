@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+<<<<<<< HEAD
+
+*{
+    font-family: outfit;
+}
+
+.active hr{
+    @apply block
+}
+
+=======
+>>>>>>> 66cd174411b056e40124bd25c8db42fc65194bfb
+::-webkit-scrollbar{
+    @apply hidden
+}
+
+<<<<<<< HEAD
+@media (max-width:740px){
+    .active p{
+        @apply text-white bg-primary
+    }
+=======
+*{
+    font-family: outfit;
+>>>>>>> 66cd174411b056e40124bd25c8db42fc65194bfb
+}

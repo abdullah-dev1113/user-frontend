@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-=======
-import { createContext } from "react";
->>>>>>> 66cd174411b056e40124bd25c8db42fc65194bfb
 
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
-<<<<<<< HEAD
   const [doctors, setDoctors] = useState([]);
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : false
@@ -74,45 +69,6 @@ const AppContextProvider = (props) => {
   useEffect(() => {
     console.log("Doctors in context:", doctors);
   }, [doctors]);
-=======
-  const currency = "$";
-  const calculateAge = (dob) => {
-    const today = new Date();
-    const birthDate = new Date(dob);
-
-    let age = today.getFullYear() - birthDate.getFullYear();
-    return age;
-  };
-
-  const months = [
-    "",
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const slotDateFormat = (slotDate) => {
-    const dateArray = slotDate.split("_");
-    return (
-      dateArray[0] + " " + months[Number(dateArray[1])] + " " + dateArray[2]
-    );
-  };
-
-  const value = {
-    calculateAge,
-    slotDateFormat,
-    currency,
-  };
->>>>>>> 66cd174411b056e40124bd25c8db42fc65194bfb
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
   );

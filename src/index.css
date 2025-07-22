@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 
 *{
     font-family: outfit;
@@ -13,19 +12,16 @@
     @apply block
 }
 
-=======
->>>>>>> 66cd174411b056e40124bd25c8db42fc65194bfb
 ::-webkit-scrollbar{
     @apply hidden
 }
 
-<<<<<<< HEAD
+
 @media (max-width:740px){
     .active p{
         @apply text-white bg-primary
     }
-=======
+}  
 *{
     font-family: outfit;
->>>>>>> 66cd174411b056e40124bd25c8db42fc65194bfb
 }

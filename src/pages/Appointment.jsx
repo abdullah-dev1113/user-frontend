@@ -9,8 +9,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const Appointment = () => {
   const { docId } = useParams();
-  const { doctors, currencySymbol, token, backendUrl, getDoctorsData } =
-    useContext(AppContext);
+  const {
+    doctors,
+    currencySymbol,
+    token,
+    backendUrl,
+    getDoctorsData,
+    userData,
+  } = useContext(AppContext);
   const [docInfo, setDocInfo] = useState(null);
   const [docSlots, setDocSlots] = useState([]);
   const [slotIndex, setSlotIndex] = useState(0);
@@ -38,7 +44,7 @@ const Appointment = () => {
       //  setting end time of the date with index
       let endTime = new Date();
       endTime.setDate(today.getDate() + i);
-      endTime.setHours(21, 0, 0, 0);
+      endTime.setHours(22, 0, 0, 0);
 
       // setting hours
       if (today.getDate() === currentDate.getDate()) {
@@ -100,9 +106,32 @@ const Appointment = () => {
 
       const slotDate = day + "_" + month + "_" + year;
 
+      const userDataFromContext = userData; // ✅ from context
+
+      if (!userDataFromContext) {
+        toast.error("User information not available. Please login again.");
+        return navigate("/login");
+      }
+
+      const userDetails = {
+        name: userDataFromContext.name,
+        email: userDataFromContext.email,
+        _id: userDataFromContext._id,
+      };
+      const docData = { name: docInfo.name, email: docInfo.email };
+
       const { data } = await axios.post(
         backendUrl + "/api/user/book-appointment",
-        { docId, slotDate, slotTime },
+        {
+          docId,
+          slotDate,
+          slotTime,
+          userData: userDetails,
+          docData: { name: docInfo.name, email: docInfo.email },
+          userId: userDetails._id,
+          amount: docInfo.fees,
+          date: new Date(),
+        },
         { headers: { atoken: token } }
       );
 
@@ -129,7 +158,7 @@ const Appointment = () => {
   }, [docInfo]);
 
   useEffect(() => {
-    console.log(docSlots);
+    // console.log(docSlots);
   }, [docSlots]);
   return (
     docInfo && (

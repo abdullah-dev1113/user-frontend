@@ -67,7 +67,7 @@ const AppContextProvider = (props) => {
     }
   }, [token]);
   useEffect(() => {
-    console.log("Doctors in context:", doctors);
+    // console.log("Doctors in context:", doctors);
   }, [doctors]);
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>

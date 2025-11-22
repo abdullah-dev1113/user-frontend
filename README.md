@@ -1,12 +1,108 @@
-# React + Vite
+# 🏥 Prescripto Panel - User Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=node.js)](https://nodejs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.3-blue?logo=tailwindcss)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-4.4.0-purple?logo=vite)](https://vitejs.dev/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://healthcare-bmhe.onrender.com/)
 
-Currently, two official plugins are available:
+**Prescripto Panel** is a modern **Doctor Appointment Management System** for users/patients. Users can view doctors, book appointments, and track their medical schedules.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Folder Structure](#folder-structure)
+- [Installation & Usage](#installation--usage)
+- [Environment Variables](#environment-variables)
+- [Live Demo](#live-demo)
+
+---
+
+## Project Overview
+
+This frontend is built with **React.js + Tailwind CSS** and connects to a backend for real-time doctor appointment management.
+
+- Browse doctors by specialization
+- Book and cancel appointments
+- Track upcoming appointments
+- Smooth communication with doctors via the system
+
+---
+
+## Features
+
+### User Panel
+
+- Browse list of doctors and their profiles
+- Book appointments for available slots
+- Cancel or reschedule appointments
+- Track all upcoming appointments
+
+---
+
+## Technologies Used
+
+- **Frontend:** React.js, Tailwind CSS, React Router, Axios, React Toastify
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** JWT Tokens for Users
+- **Deployment:** Vite, Render
+
+---
+
+## Folder Structure
+
+```text
+/project-root
+├─ /public
+├─ /src
+│  ├─ /assets
+│  ├─ /components
+│  ├─ /context
+│  ├─ /pages
+│  │  ├─ /Home
+│  │  │  ├─ Home.jsx
+│  │  │  └─ DoctorsList.jsx
+│  │  ├─ /Appointments
+│  │  │  ├─ MyAppointments.jsx
+│  │  │  └─ BookAppointment.jsx
+│  │  └─ Login.jsx
+│  ├─ App.jsx
+│  └─ main.jsx
+├─ .env
+├─ package.json
+└─ README.md
+
+
+Installation & Usage
+# Clone the repository
+git clone https://github.com/abdullah-dev1113/user-frontend.git
+
+# Navigate to the project directory
+cd user-frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Open in browser at:
+http://localhost:5173
+
+
+Environment Variables
+Create a .env file in the root directory and add:
+
+# For production (live backend)
+VITE_BACKEND_URL=https://doctor-backend-service.onrender.com
+# For local development (backend runs on port 5000)
+# VITE_BACKEND_URL=http://localhost:5000
+
+Live Demo
+
+🌐 Access the live app: https://healthcare-bmhe.onrender.com/
+```
